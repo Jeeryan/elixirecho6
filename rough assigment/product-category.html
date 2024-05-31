@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElixirEcho6 Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Category and product flexbox container */
+        .category-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .category-card {
+            flex: 0 1 calc(33.33% - 20px);
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        /* Navbar styling */
+        .navbar-brand {
+            font-size: 24px;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 18px;
+        }
+
+        /* Footer styling */
+        .footer {
+            background-color: #f8f9fa;
+            color: #6c757d;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        body {
+            background-image: url('/images/DALL·E 2024-05-09 07.12.16 - A clean and modern promotional banner for a health and wellness website. The image should only feature products with no text overlay. Include images o.webp');
+            margin: 0;
+            background-size: cover;
+        }
+        .suggestions {
+            border: 1px solid #ccc;
+            max-height: 150px;
+            overflow-y: auto;
+            position: absolute;
+            background-color: white;
+            width: calc(100% - 22px); /* Adjust width to match search input */
+            z-index: 1000;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .suggestions li {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .suggestions li:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .category-card {
+                flex: 0 1 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .category-card {
+                flex: 0 1 100%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="/images/companylogo.webp" alt="ElixirEcho6 Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    ElixirEcho6
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="product-category.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="basket.html">Basket</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Account
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                                <li><a class="dropdown-item" href="login.html">Login</a></li>
+                                <li><a class="dropdown-item" href="Register.html">Register</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex position-relative">
+                        <input class="form-control me-2" id="search" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <ul id="suggestions" class="suggestions list-group"></ul>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container mt-4">
+        <h1>Our Products</h1>
+        <p>Discover our range of health and wellness products</p>
+
+        <!-- Category Flexbox Container -->
+        <div class="category-container">
+            <div class="category-card" onclick="location.href='protein.html'">Protein</div>
+            <div class="category-card" onclick="location.href='aminoacids.html'">Amino Acids</div>
+            <div class="category-card" onclick="location.href='performance-enhancers.html'">Performance Enhancers</div>
+            <div class="category-card" onclick="location.href='vitamins-minerals.html'">Vitamins & Minerals</div>
+        </div>
+    </main>
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">© 2024 ElixirEcho6, Inc. All rights reserved.</span>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchInput = document.getElementById("search");
+            const suggestionsList = document.getElementById("suggestions");
+            const availableTags = [
+                "Protein Powder",
+                "Multivitamins",
+                "Mats",
+                "Yoga",
+                "Meditation",
+                "Running",
+                "Exercise",
+                "Healthy Eating",
+                "Smoothies",
+                "Fitness"
+            ];
+
+            searchInput.addEventListener("input", function() {
+                const query = this.value.toLowerCase();
+                suggestionsList.innerHTML = "";
+
+                if (query) {
+                    const filteredTags = availableTags.filter(tag => tag.toLowerCase().includes(query));
+                    filteredTags.forEach(tag => {
+                        const li = document.createElement("li");
+                        li.classList.add("list-group-item");
+                        li.textContent = tag;
+                        li.addEventListener("click", function() {
+                            searchInput.value = tag;
+                            suggestionsList.innerHTML = "";
+                        });
+                        suggestionsList.appendChild(li);
+                    });
+                }
+            });
+
+            document.addEventListener("click", function(e) {
+                if (e.target !== searchInput) {
+                    suggestionsList.innerHTML = "";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

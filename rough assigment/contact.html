@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ElixirEcho6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .contact-container {
+            margin-top: 40px;
+        }
+
+        .contact-header {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info,
+        .contact-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .contact-info img {
+            max-width: 30px;
+            margin-right: 10px;
+        }
+
+        .faq-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .faq-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .faq-section .accordion-button {
+            background-color: #e0e8ed;
+            color: #333;
+        }
+
+        .social-icons img {
+            width: 30px;
+            margin-right: 10px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+        }
+
+        .navbar-brand img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-info,
+            .contact-form,
+            .faq-section {
+                padding: 15px;
+            }
+
+            .contact-header {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="/images/companylogo.webp" alt="ElixirEcho6 Logo">
+                    ElixirEcho6
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="basket.html">Basket</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Account
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                                <li><a class="dropdown-item" href="login.html">Login</a></li>
+                                <li><a class="dropdown-item" href="register.html">Register</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container contact-container">
+        <h1 class="contact-header">Contact Us</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <p>Email: example@domain.com</p>
+                    <p>Phone: +0123456789, +9876543210</p>
+                    <p>Office location: UA92 Manchester</p>
+                    <div class="social-icons">
+                        <a href="#"><img src="https://img.icons8.com/color/48/000000/facebook.png"
+                                alt="Facebook"></a>
+                        <a href="#"><img src="https://img.icons8.com/color/48/000000/google-logo.png"
+                                alt="Google"></a>
+                    </div>
+                    <div class="map-container mt-3">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2371.6983360426844!2d-2.236997584285737!3d53.462592680009814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb1b012e04c0b%3A0x6c5d8e5dd6d77b0!2sUA92!5e0!3m2!1sen!2suk!4v1642867833537!5m2!1sen!2suk"
+                            allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="contact-form">
+                    <h2>Leave a Message</h2>
+                    <form>
+                        <div class="mb-3">
+                            <label for="fname" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="fname">
+                        </div>
+                        <div class="mb-3">
+                            <label for="lname" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lname">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="country" class="form-label">Country</label>
+                            <select class="form-select" id="country">
+                                <option value="USA">USA</option>
+                                <option value="UK">UK</option>
+                                <option value="India">India</option>
+                                <option value="Australia">Australia</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="faq-section">
+            <h2>Help Centre</h2>
+            <input type="text" class="form-control mb-4" id="searchBar" placeholder="Try searching for your question">
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Delivery
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li><strong>What do I do if I have not received my order?</strong> Contact our customer
+                                    support team for assistance.</li>
+                                <li><strong>What delivery options do you offer?</strong> We offer standard and express
+                                    delivery options.</li>
+                                <li><strong>How long will it take for my order to be delivered?</strong> Standard
+                                    delivery takes 3-5 business days, while express delivery takes 1-2 business days.
+                                </li>
+                                <li><strong>What happens if I am not at home to accept my delivery?</strong> The courier
+                                    will leave a note with instructions for rescheduling delivery or pickup.</li>
+                                <li><strong>There is an item missing from my order. What should I do?</strong> Contact
+                                    our customer support team for assistance.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Ordering
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li><strong>How do I place an order?</strong> Browse our products, add to your cart, and
+                                    proceed to checkout.</li>
+                                <li><strong>Can I make changes to my cart?</strong> Yes, you can add or remove items from
+                                    your cart before completing the purchase.</li>
+                                <li><strong>Can I place an order over the phone?</strong> Yes, you can call our customer
+                                    support team to place an order.</li>
+                                <li><strong>Can I place an order to a different address?</strong> Yes, you can specify a
+                                    different shipping address during checkout.</li>
+                                <li><strong>How will I know when my order has been dispatched?</strong> You will receive
+                                    a confirmation email with tracking information once your order has been dispatched.
+                                </li>
+                                <li><strong>What is the status of my order?</strong> You can track your order status in
+                                    your account under 'My Orders'.</li>
+                                <li><strong>Where is my order?</strong> Use the tracking number provided in the
+                                    confirmation email to check the status of your delivery.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Returns and Refunds
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li><strong>What is your returns policy?</strong> We accept returns within 30 days of
+                                    purchase.</li>
+                                <li><strong>How do I return an item?</strong> Contact our customer support team for
+                                    instructions on returning items.</li>
+                                <li><strong>Can I return a product if I no longer want it?</strong> Yes, you can return
+                                    unused and unopened products within 30 days.</li>
+                                <li><strong>What happens once my item is returned?</strong> Once we receive the returned
+                                    item, we will process your refund or exchange.</li>
+                                <li><strong>When will I receive my refund?</strong> Refunds are processed within 5-7
+                                    business days after receiving the returned item.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            My Account
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li><strong>How do I register?</strong> Click on the 'Register' button at the top right
+                                    of the page and fill in the required information.</li>
+                                <li><strong>How do I change my account details?</strong> Go to 'My Account' and click on
+                                    'Edit Profile' to update your information.</li>
+                                <li><strong>Are my personal details safe if I create an account?</strong> Yes, we use
+                                    industry-standard security measures to protect your information.</li>
+                                <li><strong>I have forgotten my password. What should I do?</strong> Click on the 'Forgot
+                                    Password' link on the login page to reset your password.</li>
+                                <li><strong>How do I unsubscribe?</strong> You can unsubscribe from our emails by clicking
+                                    the 'Unsubscribe' link at the bottom of any email we send you.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Payment and Discount
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li><strong>How can I pay for my order?</strong> We accept various payment methods
+                                    including credit/debit cards, PayPal, and more.</li>
+                                <li><strong>I have a payment problem on my order. What should I do?</strong> Contact our
+                                    customer support team for assistance.</li>
+                                <li><strong>Why can I see a transaction pending in my PayPal account?</strong> It may take
+                                    a few days for the transaction to be processed. If it remains pending, contact PayPal
+                                    support.</li>
+                                <li><strong>Why can't I add a new payment card?</strong> Ensure that all card details are
+                                    correct and the card is active. If the problem persists, contact our support team.
+                                </li>
+                                <li><strong>How do I use a voucher code?</strong> Enter the voucher code at checkout to
+                                    apply the discount to your order.</li>
+                                <li><strong>Why is my voucher code not working?</strong> Ensure that the code is entered
+                                    correctly and check the terms and conditions of the voucher. Contact support if the
+                                    problem persists.</li>
+                                <li><strong>What is your referral scheme?</strong> Refer a friend and you both receive
+                                    discounts on your next orders. See our referral page for more details.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            Product Advice
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li><strong>What is the amino acid profile for X product?</strong> Detailed amino acid
+                                    profiles are available on the product pages.</li>
+                                <li><strong>What type of fish are our omega soft gels sourced from?</strong> Our omega
+                                    soft gels are sourced from sustainably caught fish.</li>
+                                <li><strong>What extraction method is used for Impact Whey Protein?</strong> We use a
+                                    cold-filtered extraction process to ensure the highest quality.</li>
+                                <li><strong>Are our products GMO-free?</strong> Yes, all our products are GMO-free.</li>
+                                <li><strong>Is any alcohol used in any of the products?</strong> No, our products do not
+                                    contain any alcohol.</li>
+                                <li><strong>Are your products Halal/Kosher?</strong> Yes, we offer a range of Halal and
+                                    Kosher certified products. Please check the product page for more information.</li>
+                                <li><strong>What is the source of your BCAAs?</strong> Our BCAAs are sourced from
+                                    plant-based ingredients.</li>
+                                <li><strong>What is the difference between impact whey protein and impact whey isolate?
+                                    </strong> Impact Whey Isolate contains a higher percentage of protein per serving and
+                                    lower levels of fat and carbohydrates compared to Impact Whey Protein.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSeven">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            Website
+                        </button>
+                    </h2>
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li><strong>Where can I find your Terms and Conditions?</strong> Our Terms and Conditions
+                                    are available at the bottom of our website.</li>
+                                <li><strong>Why am I having problems accessing the checkout?</strong> Ensure that all
+                                    required fields are filled out correctly. If the issue persists, try clearing your
+                                    browser cache or contact our support team.</li>
+                                <li><strong>What is your Privacy Policy?</strong> Our Privacy Policy is available at the
+                                    bottom of our website.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">© 2024 ElixirEcho6, Inc. All rights reserved.</span>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchBar = document.getElementById('searchBar');
+            searchBar.addEventListener('input', function () {
+                // Add your auto-suggestions logic here
+                console.log('User is typing:', searchBar.value);
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitamins & Minerals - ElixirEcho6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Product flexbox container */
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        /* Product card styling */
+        .product-card {
+            flex: 0 1 calc(33.33% - 20px);
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 10px; /* Added margin for spacing */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .product-card {
+                flex: 0 1 calc(50% - 20px); /* Adjust to two columns on medium screens */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .product-card {
+                flex: 0 1 100%; /* Full width on small screens */
+            }
+        }
+
+        /* Navbar styling */
+        .navbar-brand {
+            font-size: 24px; /* Increased font size for brand */
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 18px; /* Increased font size for nav links */
+        }
+
+        /* Footer styling */
+        .footer {
+            background-color: #f8f9fa;
+            color: #6c757d;
+            text-align: center;
+            font-size: 14px; /* Font size for footer text */
+        }
+
+        /* Body background styling */
+        body {
+            background-image: url('/images/DALL·E 2024-05-09 07.12.16 - A clean and modern promotional banner for a health and wellness website. The image should only feature products with no text overlay. Include images o.webp');
+            margin: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Search suggestions styling */
+        .suggestions {
+            border: 1px solid #ccc;
+            max-height: 150px;
+            overflow-y: auto;
+            position: absolute;
+            background-color: white;
+            width: calc(100% - 22px); /* Adjust width to match search input */
+            z-index: 1000;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .suggestions li {
+            padding: 10px; /* Padding for suggestion items */
+            cursor: pointer;
+        }
+
+        .suggestions li:hover {
+            background-color: #f0f0f0; /* Background color on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section with navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="/images/companylogo.webp" alt="ElixirEcho6 Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    ElixirEcho6
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <!-- Navigation links -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="basket.html">Basket</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Account
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                                <li><a class="dropdown-item" href="login.html">Login</a></li>
+                                <li><a class="dropdown-item" href="Register.html">Register</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                    <!-- Search form with autocomplete suggestions -->
+                    <form class="d-flex position-relative">
+                        <input class="form-control me-2" id="search" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <ul id="suggestions" class="suggestions list-group"></ul>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container mt-4">
+        <!-- Main content heading -->
+        <h1>Vitamins & Minerals</h1>
+        <p>Discover our range of vitamins and minerals</p>
+
+        <!-- Sort options dropdown -->
+        <div class="d-flex justify-content-end mb-4">
+            <select class="form-select w-auto" id="sortOptions">
+                <option selected disabled>Sort by</option>
+                <option value="high-to-low">Price: High to Low</option>
+                <option value="low-to-high">Price: Low to High</option>
+                <option value="popularity">Popularity</option>
+                <option value="new-arrivals">New Arrivals</option>
+            </select>
+        </div>
+
+        <!-- Product Flexbox Container -->
+        <div class="product-container" id="productList">
+            <!-- Individual product card -->
+            <div class="product-card" data-price="15" data-popularity="4" data-new-arrivals="2024-01-01" onclick="location.href='multivitamins.html'">
+                <img src="/images/multivitamins.webp" alt="multivitamins" class="img-fluid">
+                <h3>Multivitamins</h3>
+                <p>Achieve your daily nutritional goals with our comprehensive Multivitamin supplements.</p>
+                <p class="price">£15.00</p>
+                <button class="btn btn-primary add-to-cart" data-product="Multivitamins">Add to Cart</button>
+            </div>
+            <!-- Individual product card -->
+            <div class="product-card" data-price="12" data-popularity="5" data-new-arrivals="2024-02-15" onclick="location.href='vitamin_d.html'">
+                <img src="/images/vitamin d.webp" alt="vitamin_d" class="img-fluid">
+                <h3>Vitamin D</h3>
+                <p>Supports bone health and immune function.</p>
+                <p class="price">£12.00</p>
+                <button class="btn btn-primary add-to-cart" data-product="Vitamin D">Add to Cart</button>
+            </div>
+            <!-- Individual product card -->
+            <div class="product-card" data-price="10" data-popularity="3" data-new-arrivals="2024-03-10" onclick="location.href='vitamin_c.html'">
+                <img src="/images/vitamin c.webp" alt="vitamin_c" class="img-fluid">
+                <h3>Vitamin C</h3>
+                <p>Powerful antioxidant that supports immune health.</p>
+                <p class="price">£10.00</p>
+                <button class="btn btn-primary add-to-cart" data-product="Vitamin C">Add to Cart</button>
+            </div>
+            <!-- Individual product card -->
+            <div class="product-card" data-price="14" data-popularity="4" data-new-arrivals="2024-01-20"onclick="location.href='calcium.html'">
+                <img src="/images/calcium.webp" alt="calcium" class="img-fluid">
+                <h3>Calcium</h3>
+                <p>Essential for bone health and muscle function.</p>
+                <p class="price">£14.00</p>
+                <button class="btn btn-primary add-to-cart" data-product="Calcium">Add to Cart</button>
+            </div>
+            <!-- Individual product card -->
+            <div class="product-card" data-price="13" data-popularity="2" data-new-arrivals="2024-04-05" onclick="location.href='magnesium.html'">
+                <img src="/images/magnesium.webp" alt="calcium" class="img-fluid">
+                <h3>Magnesium</h3>
+                <p>Supports muscle and nerve function, as well as energy production.</p>
+                <p class="price">£13.00</p>
+                <button class="btn btn-primary add-to-cart" data-product="Magnesium">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">© 2024 ElixirEcho6, Inc. All rights reserved.</span>
+        </div>
+    </footer>
+    <!-- Import jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Import Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Document ready function to ensure the DOM is fully loaded before running scripts
+        $(document).ready(function() {
+            // Event listener for the sort options dropdown
+            $('#sortOptions').change(function() {
+                // Get the selected sort value
+                var sortValue = $(this).val();
+                // Select all product cards
+                var $products = $('.product-card');
+
+                // Sort by price high to low
+                if (sortValue === 'high-to-low') {
+                    $products.sort(function(a, b) {
+                        return $(b).data('price') - $(a).data('price');
+                    });
+                } 
+                // Sort by price low to high
+                else if (sortValue === 'low-to-high') {
+                    $products.sort(function(a, b) {
+                        return $(a).data('price') - $(b).data('price');
+                    });
+                } 
+                // Sort by popularity
+                else if (sortValue === 'popularity') {
+                    $products.sort(function(a, b) {
+                        return $(b).data('popularity') - $(a).data('popularity');
+                    });
+                } 
+                // Sort by new arrivals
+                else if (sortValue === 'new-arrivals') {
+                    $products.sort(function(a, b) {
+                        return new Date($(b).data('new-arrivals')) - new Date($(a).data('new-arrivals'));
+                    });
+                }
+
+                // Re-append sorted products to the product list
+                $('#productList').html($products);
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get search input and suggestions list elements
+            const searchInput = document.getElementById("search");
+            const suggestionsList = document.getElementById("suggestions");
+
+            // Available tags for search suggestions
+            const availableTags = [
+                "Protein Powder",
+                "Multivitamins",
+                "Mats",
+                "Yoga",
+                "Meditation",
+                "Running",
+                "Exercise",
+                "Healthy Eating",
+                "Smoothies",
+                "Fitness"
+            ];
+
+            // Event listener for search input
+            searchInput.addEventListener("input", function() {
+                const query = this.value.toLowerCase();
+                suggestionsList.innerHTML = "";
+
+                // Filter and display suggestions based on input
+                if (query) {
+                    const filteredTags = availableTags.filter(tag => tag.toLowerCase().includes(query));
+                    filteredTags.forEach(tag => {
+                        const li = document.createElement("li");
+                        li.classList.add("list-group-item");
+                        li.textContent = tag;
+                        li.addEventListener("click", function() {
+                            searchInput.value = tag;
+                            suggestionsList.innerHTML = "";
+                        });
+                        suggestionsList.appendChild(li);
+                    });
+                }
+            });
+
+            // Clear suggestions when clicking outside the input
+            document.addEventListener("click", function(e) {
+                if (e.target !== searchInput) {
+                    suggestionsList.innerHTML = "";
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Select all 'Add to Cart' buttons
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+            // Add event listener to each 'Add to Cart' button
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function(event) {
+                    // Get the closest product card
+                    const productCard = event.target.closest('.product-card');
+                    // Get product details
+                    const productName = productCard.querySelector('h3').textContent;
+                    const productPrice = parseFloat(productCard.querySelector('.price').textContent.replace('£', ''));
+                    const productImage = productCard.querySelector('img') ? productCard.querySelector('img').src : ''; // Assuming there's an image element in the product card
+                    const productQuantity = 1; // Default quantity to 1 for now
+
+                    // Create product object
+                    const product = {
+                        name: productName,
+                        price: productPrice,
+                        image: productImage,
+                        quantity: productQuantity
+                    };
+
+                    // Add product to basket
+                    addToBasket(product);
+                });
+            });
+
+            // Function to add product to basket and store in local storage
+            function addToBasket(product) {
+                // Get existing basket items from local storage or initialize as empty array
+                let basketItems = JSON.parse(localStorage.getItem('basketItems')) || [];
+
+                // Check if product already exists in basket
+                const existingProductIndex = basketItems.findIndex(item => item.name === product.name);
+                if (existingProductIndex > -1) {
+                    // Increase quantity if product exists
+                    basketItems[existingProductIndex].quantity += 1;
+                } else {
+                    // Add new product to basket
+                    basketItems.push(product);
+                }
+
+                // Update local storage with new basket items
+                localStorage.setItem('basketItems', JSON.stringify(basketItems));
+                // Alert user that product has been added to basket
+                alert(`${product.name} has been added to your basket.`);
+            }
+        });
+    </script>
+</body>
+</html>

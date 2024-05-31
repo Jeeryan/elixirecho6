@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Shopping Basket - ElixirEcho6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 20px;
+        }
+ 
+        .basket-container {
+            margin-top: 40px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+ 
+        .basket-header {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+ 
+        .basket-table {
+            width: 100%;
+            table-layout: fixed;
+        }
+ 
+        .basket-table th, .basket-table td {
+            padding: 15px;
+            text-align: left;
+        }
+ 
+        .quantity-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+ 
+        .quantity-input input {
+            width: 50px;
+            text-align: center;
+        }
+ 
+        .subtotal-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+ 
+        .subtotal-container div {
+            font-size: 1.2rem;
+        }
+ 
+        .discount-code-container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+ 
+        .discount-code-container input {
+            margin-right: 10px;
+            width: 200px;
+        }
+ 
+        .order-summary {
+            margin-top: 20px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+ 
+        .order-summary div {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+ 
+        .order-summary div:last-child {
+            margin-bottom: 0;
+        }
+ 
+        .checkout-button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+ 
+        .checkout-button-container button {
+            font-size: 1.2rem;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+ 
+        .empty-basket-message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #6c757d;
+        }
+ 
+        /* Footer styling */
+        .footer {
+            background-color: #f8f9fa;
+            color: #6c757d;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 40px;
+            padding: 20px 0;
+        }
+ 
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .basket-table th, .basket-table td {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+ 
+            .quantity-input input {
+                width: 40px;
+            }
+ 
+            .subtotal-container div {
+                font-size: 1rem;
+            }
+ 
+            .discount-code-container input {
+                width: 150px;
+            }
+ 
+            .order-summary div {
+                font-size: 1rem;
+            }
+ 
+            .checkout-button-container button {
+                font-size: 1rem;
+                padding: 8px 16px;
+            }
+ 
+            .empty-basket-message {
+                font-size: 1.2rem;
+            }
+        }
+ 
+        @media (max-width: 576px) {
+            .basket-table th, .basket-table td {
+                padding: 8px;
+                font-size: 0.8rem;
+            }
+ 
+            .quantity-input input {
+                width: 35px;
+            }
+ 
+            .subtotal-container div {
+                font-size: 0.9rem;
+            }
+ 
+            .discount-code-container input {
+                width: 120px;
+            }
+ 
+            .order-summary div {
+                font-size: 0.9rem;
+            }
+ 
+            .checkout-button-container button {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+ 
+            .empty-basket-message {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container text-center my-4">
+            <img src="/images/companylogo.webp" alt="ElixirEcho6 Logo" width="30" height="30" class="d-inline-block align-text-top">
+            <span class="h2">ElixirEcho6</span>
+        </div>
+    </header>
+    <main class="container basket-container">
+        <h1 class="basket-header">Your Shopping Basket</h1>
+ 
+        <table class="basket-table table">
+            <thead>
+                <tr>
+                    <th>Items</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="basket-items">
+                <!-- Basket items will be dynamically added here -->
+            </tbody>
+        </table>
+ 
+        <div class="subtotal-container" id="subtotal-container">
+            <div>
+                <strong>Basket Subtotal:</strong> <span id="basket-subtotal">£0.00</span>
+            </div>
+        </div>
+ 
+        <div class="discount-code-container mt-4">
+            <input type="text" class="form-control" placeholder="Enter discount code">
+            <button class="btn btn-outline-secondary">Use Code</button>
+        </div>
+ 
+        <div class="order-summary mt-4">
+            <div>
+                <span>Savings:</span>
+                <span id="savings">£0.00</span>
+            </div>
+            <div>
+                <span>Basket Subtotal:</span>
+                <span id="basket-subtotal-summary">£0.00</span>
+            </div>
+        </div>
+ 
+        <div class="checkout-button-container" id="checkout-button-container">
+            <button class="btn" id="checkout-button">Checkout Securely Now</button>
+        </div>
+ 
+        <div class="empty-basket-message" id="empty-basket-message">
+            Your basket is empty.
+        </div>
+ 
+        <button class="btn btn-outline-secondary mt-4" onclick="window.location.href='product-category.html'">Continue Shopping</button>
+    </main>
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">© 2024 ElixirEcho6, Inc. All rights reserved.</span>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const basketItems = JSON.parse(localStorage.getItem('basketItems')) || [];
+            const basketTable = $('#basket-items');
+            const basketSubtotal = $('#basket-subtotal');
+            const basketSubtotalSummary = $('#basket-subtotal-summary');
+            const savings = $('#savings');
+            const emptyBasketMessage = $('#empty-basket-message');
+            const subtotalContainer = $('#subtotal-container');
+            const checkoutButtonContainer = $('#checkout-button-container');
+            const checkoutButton = $('#checkout-button');
+ 
+            function updateBasket() {
+                let subtotal = 0;
+                basketTable.empty();
+                basketItems.forEach(item => {
+                    const itemSubtotal = item.price * item.quantity;
+                    subtotal += itemSubtotal;
+                    basketTable.append(`
+                        <tr>
+                            <td>
+                                <img src="${item.image}" alt="${item.name}" width="50">
+                                ${item.name} - ${item.flavour}
+                            </td>
+                            <td>
+                                <div class="quantity-input">
+                                    <button class="btn btn-outline-secondary decrease-quantity" data-name="${item.name}" data-flavour="${item.flavour}">-</button>
+                                    <input type="number" class="form-control" value="${item.quantity}" min="1" readonly>
+                                    <button class="btn btn-outline-secondary increase-quantity" data-name="${item.name}" data-flavour="${item.flavour}">+</button>
+                                    <button class="btn btn-outline-secondary remove-item" data-name="${item.name}" data-flavour="${item.flavour}">x</button>
+                                </div>
+                            </td>
+                            <td>£${item.price.toFixed(2)}</td>
+                        </tr>
+                    `);
+                });
+                basketSubtotal.text(`£${subtotal.toFixed(2)}`);
+                basketSubtotalSummary.text(`£${subtotal.toFixed(2)}`);
+                savings.text(`£${(0).toFixed(2)}`); // Assuming no savings for now
+                localStorage.setItem('basketItems', JSON.stringify(basketItems));
+ 
+                if (basketItems.length === 0) {
+                    emptyBasketMessage.show();
+                    subtotalContainer.hide();
+                    checkoutButtonContainer.hide();
+                } else {
+                    emptyBasketMessage.hide();
+                    subtotalContainer.show();
+                    checkoutButtonContainer.show();
+                }
+            }
+ 
+            updateBasket();
+ 
+            $(document).on('click', '.increase-quantity', function() {
+                const itemName = $(this).data('name');
+                const itemFlavour = $(this).data('flavour');
+                const item = basketItems.find(item => item.name === itemName && item.flavour === itemFlavour);
+                item.quantity += 1;
+                updateBasket();
+            });
+ 
+            $(document).on('click', '.decrease-quantity', function() {
+                const itemName = $(this).data('name');
+                const itemFlavour = $(this).data('flavour');
+                const item = basketItems.find(item => item.name === itemName && item.flavour === itemFlavour);
+                if (item.quantity > 1) {
+                    item.quantity -= 1;
+                }
+                updateBasket();
+            });
+ 
+            $(document).on('click', '.remove-item', function() {
+                const itemName = $(this).data('name');
+                const itemFlavour = $(this).data('flavour');
+                const itemIndex = basketItems.findIndex(item => item.name === itemName && item.flavour === itemFlavour);
+                basketItems.splice(itemIndex, 1);
+                updateBasket();
+            });
+ 
+            checkoutButton.click(function() {
+                if (basketItems.length === 0) {
+                    alert("Your basket is empty.");
+                } else {
+                    window.location.href = 'delivery.html';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

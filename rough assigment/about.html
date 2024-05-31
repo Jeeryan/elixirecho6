@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ElixirEcho6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Navbar styling */
+        .navbar-brand {
+            font-size: 24px;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 18px;
+        }
+
+        /* Footer styling */
+        .footer {
+            background-color: #f8f9fa;
+            color: #6c757d;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 40px;
+            padding: 20px 0;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background-size: cover;
+        }
+
+        .about-section {
+            padding: 60px 0;
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            color: #6c757d;
+        }
+
+        .icon-box {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .icon-box svg {
+            width: 32px;
+            height: 32px;
+            margin-right: 15px;
+        }
+
+        .icon-box h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .icon-box p {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .about-section h2 {
+                font-size: 2rem;
+            }
+
+            .about-section p {
+                font-size: 1rem;
+            }
+
+            .icon-box h4 {
+                font-size: 1.1rem;
+            }
+
+            .icon-box p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .about-section h2 {
+                font-size: 1.75rem;
+            }
+
+            .about-section p {
+                font-size: 0.9rem;
+            }
+
+            .icon-box h4 {
+                font-size: 1rem;
+            }
+
+            .icon-box p {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="/images/companylogo.webp" alt="ElixirEcho6 Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    ElixirEcho6
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="product-category.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="basket.html">Basket</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Account
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                                <li><a class="dropdown-item" href="login.html">Login</a></li>
+                                <li><a class="dropdown-item" href="register.html">Register</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex position-relative">
+                        <input class="form-control me-2" id="search" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <ul id="suggestions" class="suggestions list-group"></ul>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <div class="container">
+                <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+                    <div class="col-12 col-lg-6 col-xl-5">
+                        <img class="img-fluid rounded" loading="lazy" src="/mnt/data/about us 1.png" alt="About Us Image 1">
+                    </div>
+                    <div class="col-12 col-lg-6 col-xl-7">
+                        <div class="row justify-content-xl-center">
+                            <div class="col-12 col-xl-11">
+                                <h2 class="mb-3">Who Are We?</h2>
+                                <p class="lead fs-4 text-secondary mb-3">We help people to build incredible brands and superior products. Our perspective is to furnish outstanding captivating services.</p>
+                                <p class="mb-5">We are a fast-growing company, but we have never lost sight of our core values. We believe in collaboration, innovation, and customer satisfaction. We are always looking for new ways to improve our products and services.</p>
+                                <div class="row gy-4 gy-md-0 gx-xxl-5">
+                                    <div class="col-12 col-md-6">
+                                        <div class="icon-box">
+                                            <div class="text-primary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                                                    <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h4 class="h4 mb-3">What we do?</h4>
+                                                <p class="text-secondary mb-0">We offer premium wellness products, including nutritional supplements, natural skincare, aromatherapy, fitness essentials, and mindfulness tools. Our mission is to enhance your health and well-being with high-quality, natural solutions, supported by exceptional customer service and sustainable practices.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="icon-box">
+                                            <div class="text-primary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-fire" viewBox="0 0 16 16">
+                                                    <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16Zm0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15Z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h4 class="h4 mb-3">We are Committed to</h4>
+                                                <p class="text-secondary mb-0">We are committed to providing high-quality wellness products that enhance your health and well-being. Our dedication extends to exceptional customer service, sustainable practices, and supporting your holistic wellness journey with natural, effective solutions.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="container">
+                <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+                    <div class="col-12 col-lg-6 col-xl-5">
+                        <img class="img-fluid rounded" loading="lazy" src="/mnt/data/about us 2.png" alt="About Us Image 2">
+                    </div>
+                    <div class="col-12 col-lg-6 col-xl-7">
+                        <div class="row justify-content-xl-center">
+                            <div class="col-12 col-xl-11">
+                                <h2 class="mb-3">How it started...</h2>
+                                <p class="lead fs-4 text-secondary mb-3">Since 2005, ElixirEcho6 has been charting its own unique path. It all began with a vision and a humble kitchen table, where we dared to dream of revolutionising the way we power our movements.</p>
+                                <p class="mb-5">In 2013, we took our first steps, developing a line of wellness products that quickly gained a loyal following. By 2017, we proudly established ourselves as a trusted name in the wellness community, known for our commitment to quality and natural ingredients.</p>
+                                <p class="mb-5">But our journey didn't stop there. As our passion and product line expanded, we recognized the need to reach a broader audience. In 2024, we launched our e-commerce platform, making our premium wellness products accessible to everyone, everywhere. Whether you're looking for nutritional supplements, natural skincare, aromatherapy, fitness essentials, or mindfulness tools, we're here to support your wellness journey.
+
+                                    Join us as we continue to grow and innovate, bringing you the best in wellness, every step of the way.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">© 2024 ElixirEcho6, Inc. All rights reserved.</span>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchInput = document.getElementById("search");
+            const suggestionsList = document.getElementById("suggestions");
+            const availableTags = [
+                "Protein Powder",
+                "Multivitamins",
+                "Mats",
+                "Yoga",
+                "Meditation",
+                "Running",
+                "Exercise",
+                "Healthy Eating",
+                "Smoothies",
+                "Fitness"
+            ];
+
+            searchInput.addEventListener("input", function() {
+                const query = this.value.toLowerCase();
+                suggestionsList.innerHTML = "";
+
+                if (query) {
+                    const filteredTags = availableTags.filter(tag => tag.toLowerCase().includes(query));
+                    filteredTags.forEach(tag => {
+                        const li = document.createElement("li");
+                        li.classList.add("list-group-item");
+                        li.textContent = tag;
+                        li.addEventListener("click", function() {
+                            searchInput.value = tag;
+                            suggestionsList.innerHTML = "";
+                        });
+                        suggestionsList.appendChild(li);
+                    });
+                }
+            });
+
+            document.addEventListener("click", function(e) {
+                if (e.target !== searchInput) {
+                    suggestionsList.innerHTML = "";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
